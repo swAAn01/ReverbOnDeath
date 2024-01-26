@@ -51,7 +51,7 @@ namespace ReverbOnDeath.Patches
                         currentVoiceChatAudioSource.gameObject.AddComponent<AudioEchoFilter>();
                         AudioEchoFilter aef = currentVoiceChatAudioSource.gameObject.GetComponent<AudioEchoFilter>();
                         aef.delay = 25f;
-                        aef.decayRatio = 0.9f;
+                        aef.decayRatio = 0.94f;
                         aef.wetMix = 1f;
                         aef.dryMix = 0f;
                         aef.enabled = false;
@@ -65,7 +65,7 @@ namespace ReverbOnDeath.Patches
                             configs.Add(pcb,
                                 new AudioConfig(
                                         pcb,
-                                        Time.time + 1.5f, // echo cutoff
+                                        Time.time + 2f, // echo cutoff
                                         Time.time + 0.1f, // voice cutoff
                                         currentVoiceChatAudioSource.GetComponent<AudioLowPassFilter>().enabled,
                                         currentVoiceChatAudioSource.GetComponent<AudioHighPassFilter>().enabled,
